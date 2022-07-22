@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func (c *Client) CreateService(service ServicePostBody) (*ServicePostResponse, error) {
+func (c *Client) CreateService(service ServicePostStruct) (*ServicePostResponse, error) {
 	requestBody, err := json.Marshal(service)
 	if err != nil {
 		return nil, err
@@ -30,4 +30,8 @@ func (c *Client) CreateService(service ServicePostBody) (*ServicePostResponse, e
 	}
 
 	return &newService, err
+}
+
+func (c *Client) GetService() (*ServiceGetResponse, error) {
+		
 }

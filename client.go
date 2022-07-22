@@ -24,7 +24,7 @@ type AuthStruct struct {
 }
 
 type AuthResponse struct {
-	ActingOwnerID int     `json:"actionOwnerId"`
+	ActingOwnerID int    `json:"actionOwnerId"`
 	RefreshToken  string `json:"refresh_token"`
 	AccessToken   string `json:"access_token"`
 }
