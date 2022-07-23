@@ -64,6 +64,6 @@ type Item struct { //CHECK WITH PHANI WHAT VALUES GO IN HERE
 	ServiceBaseID                int       `json:"serviceBaseTypeId"`
 	ServiceBaseName              string    `json:"serviceBaseTypeName"`
 	UsageFrequency               int       `json:"usageFrequency"`
-	UseageFrequencyTypeID        int       `json:"usageFrequencyTypeId"`
+	UsageFrequencyTypeID         int       `json:"usageFrequencyTypeId"`
 	UsageFrequencyTypeName       string    `json:"usageFrequencyTypeName"`
 }
