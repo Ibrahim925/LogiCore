@@ -4,7 +4,7 @@ import (
 	"time"
 )
 
-//https://base_url.com/ResourceServer/api/v6/internal/Service
+//POST https://base_url.com/ResourceServer/api/v6/internal/Service
 type ServicePostStruct struct {
 	Name              string    `json:"name"`
 	IsActive          bool      `json:"isActive"`
@@ -14,7 +14,7 @@ type ServicePostStruct struct {
 	IsTaxExempt       bool      `json:"isTaxExempt"`
 	Created           time.Time `json:"created"`
 	Details           struct {
-		UsageBucket UsageBucket `json:"usageBuckets"`
+		UsageBuckets UsageBucket `json:"usageBuckets"`
 	} `json:"details"`
 	Description                string `json:"description"`
 	UsageFrequency             int    `json:"useageFrequency"`
@@ -40,19 +40,19 @@ type ServicePostResponse struct {
 type ServiceGetResponse struct {
 	TrackingID string `json:"trackingId"`
 	TotalCount int    `json:"totalCount"`
-	Items      []Item
+	Items      []Item `json:"items"`
 }
 
 type UsageBucket struct {
-	Items []Item `json:"items"` //CHECK WITH PHANI WHAT VALUES GO IN HERE
+	Items []Item `json:"items"`
 }
 
-type Item struct {
-	Identity                     string    `json:"identity"`
+type Item struct { //CHECK WITH PHANI WHAT VALUES GO IN HERE
+	Identity                     int       `json:"identity"`
 	Name                         string    `json:"name"`
 	Description                  string    `json:"description"`
-	ServiceTypeID                int       `"serviceTypeId"`
-	ServiceTypeName              string    `"serviceTypeName"`
+	ServiceTypeID                int       `json:"serviceTypeId"`
+	ServiceTypeName              string    `json:"serviceTypeName"`
 	Created                      time.Time `json:"created"`
 	IsActive                     bool      `json:"isActive"`
 	IsTaxExempt                  bool      `json:"isTaxExempt"`

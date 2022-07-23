@@ -36,7 +36,7 @@ func NewClient(
 	clientID string,
 ) (*Client, error) {
 	client := Client{
-		HTTPClient: &http.Client{Timeout: 10 * time.Second},
+		HTTPClient: &http.Client{Timeout: 100 * time.Second},
 		HostURL:    host,
 	}
 
@@ -73,7 +73,7 @@ func (c *Client) doRequest(
 		token = *authToken
 	}
 
-	req.Header.Set("Authorization", token)
+	req.Header.Set("Authorization", "Bearer "+token)
 
 	res, err := c.HTTPClient.Do(req)
 	if err != nil {

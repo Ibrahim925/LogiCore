@@ -29,9 +29,24 @@ func (c *Client) CreateService(service ServicePostStruct) (*ServicePostResponse,
 		return nil, err
 	}
 
-	return &newService, err
+	return &newService, nil
 }
 
 func (c *Client) GetService() (*ServiceGetResponse, error) {
-		
+	request, err := http.NewRequest("GET", fmt.Sprintf("%s/ResourceServer/api/v6/internal/Service", c.HostURL), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	body, err := c.doRequest(request, &c.AccessToken)
+	if err != nil {
+		return nil, err
+	}
+
+	newService := ServiceGetResponse{}
+	if err := json.Unmarshal(body, &newService); err != nil {
+		return nil, err
+	}
+
+	return &newService, nil
 }
