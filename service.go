@@ -32,7 +32,7 @@ func (c *Client) CreateService(service ServicePostStruct) (*ServicePostResponse,
 	return &newService, nil
 }
 
-func (c *Client) GetService() (*ServiceGetResponse, error) {
+func (c *Client) GetServices() (*ServicesGetResponse, error) {
 	request, err := http.NewRequest("GET", fmt.Sprintf("%s/ResourceServer/api/v6/internal/Service", c.HostURL), nil)
 	if err != nil {
 		return nil, err
@@ -43,10 +43,29 @@ func (c *Client) GetService() (*ServiceGetResponse, error) {
 		return nil, err
 	}
 
-	newService := ServiceGetResponse{}
-	if err := json.Unmarshal(body, &newService); err != nil {
+	services := ServicesGetResponse{}
+	if err := json.Unmarshal(body, &services); err != nil {
 		return nil, err
 	}
 
-	return &newService, nil
+	return &services, nil
+}
+
+func (c *Client) GetService(id int) (*ServiceGetResponse, error) {
+	request, err := http.NewRequest("GET", fmt.Sprintf("%s/ResourceServer/api/v6/internal/Service/%d", c.HostURL, id), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	body, err := c.doRequest(request, &c.AccessToken)
+	if err != nil {
+		return nil, err
+	}
+
+	service := ServiceGetResponse{}
+	if err := json.Unmarshal(body, &service); err != nil {
+		return nil, err
+	}
+
+	return &service, nil
 }

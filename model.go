@@ -37,12 +37,19 @@ type ServicePostResponse struct {
 }
 
 //GET https://base_url.com/ResourceServer/api/v6/internal/Service
-type ServiceGetResponse struct {
+type ServicesGetResponse struct {
 	TrackingID string `json:"trackingId"`
 	TotalCount int    `json:"totalCount"`
 	Items      []Item `json:"items"`
 }
 
+// GET https://base_url.com/ResourceServer/api/v6/internal/Service/:id
+type ServiceGetResponse struct {
+	TrackingID string `json:"trackingId"`
+	Instance Item `json:"instance"`
+}
+
+// Common
 type UsageBucket struct {
 	Items []Item `json:"items"`
 }
