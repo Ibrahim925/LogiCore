@@ -60,7 +60,7 @@ type Item struct { //CHECK WITH PHANI WHAT VALUES GO IN HERE
 	Description                  string    `json:"description"`
 	ServiceTypeID                int       `json:"serviceTypeId"`
 	ServiceTypeName              string    `json:"serviceTypeName"`
-	Created                      time.Time `json:"created"`
+	Created                      string	   `json:"created"`
 	IsActive                     bool      `json:"isActive"`
 	IsTaxExempt                  bool      `json:"isTaxExempt"`
 	IsInclusiveTaxes             bool      `json:"isInclusiveTaxes"`
