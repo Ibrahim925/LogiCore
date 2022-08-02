@@ -88,7 +88,7 @@ func (c *Client) doRequest(
 		return nil, err
 	}
 
-	if res.StatusCode != http.StatusOK {
+	if res.StatusCode != http.StatusOK && res.StatusCode != http.StatusCreated {
 		return nil, fmt.Errorf("status: %d, body: %s", res.StatusCode, body)
 	}
 
