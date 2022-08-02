@@ -50,6 +50,7 @@ type ServicePatchStruct struct {
 	IsTaxExempt                  bool   `json:"isTaxExempt"`
 	IsInclusiveTaxes             bool   `json:"isInclusiveTaxes"`
 	DefaultServiceStatusTypeName string `json:"defaultServiceStatusTypeName"`
+	Description                  string `json:"description"`
 }
 
 type ServicePatchResponse struct {
