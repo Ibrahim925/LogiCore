@@ -74,6 +74,7 @@ func (c *Client) doRequest(
 	}
 
 	req.Header.Set("Authorization", "Bearer "+token)
+	req.Header.Set("Content-Type", "application/json")
 
 	res, err := c.HTTPClient.Do(req)
 	if err != nil {
