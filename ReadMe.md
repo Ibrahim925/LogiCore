@@ -9,4 +9,4 @@ model.go -> Defines request body/response structs.
 service.go -> Set of public functions that define CRUD operations later used by the Provider.
 
 <h2>Adding more requests</h2>
-Create a new file for the desired resource (e.g. Package), using service.go as an example.
+Create a new file for the desired resource (e.g. if you want to create a package resource, create a package.go), using service.go as an example.
