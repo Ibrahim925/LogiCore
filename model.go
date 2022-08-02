@@ -45,7 +45,6 @@ type ServiceGetResponse struct {
 type ServicePatchStruct struct {
 	Name                         string `json:"name"`
 	ServiceTypeName              string `json:"serviceTypeName"`
-	Created                      string `json:"created"`
 	IsActive                     bool   `json:"isActive"`
 	IsTaxExempt                  bool   `json:"isTaxExempt"`
 	IsInclusiveTaxes             bool   `json:"isInclusiveTaxes"`
