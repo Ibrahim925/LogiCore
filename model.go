@@ -19,7 +19,7 @@ type ServicePostResponse struct {
 	Type       string `json:"type"`
 	Results    struct {
 		TotalCount int `json:"totalCount"`
-		Items      struct {
+		Items      []struct {
 			Identity   int    `json:"identity"`
 			Action     string `json:"action"`
 			DtoTypeKey string `json:"dtoTypeKey"`
@@ -43,13 +43,13 @@ type ServiceGetResponse struct {
 
 // PATCH https://base_url.com/ResourceServer/api/v6/internal/Service/:id
 type ServicePatchStruct struct {
-	Name string `json:"name"`
-	ServiceTypeName string`json:"serviceTypeName"`
-	Created string`json:"created"`
-	IsActive bool`json:"isActive"`
-	IsTaxExempt bool`json:"isTaxExempt"`
-	IsInclusiveTaxes bool`json:"isInclusiveTaxes"`
-	DefaultServiceStatusTypeName string`json:"defaultServiceStatusTypeName"`
+	Name                         string `json:"name"`
+	ServiceTypeName              string `json:"serviceTypeName"`
+	Created                      string `json:"created"`
+	IsActive                     bool   `json:"isActive"`
+	IsTaxExempt                  bool   `json:"isTaxExempt"`
+	IsInclusiveTaxes             bool   `json:"isInclusiveTaxes"`
+	DefaultServiceStatusTypeName string `json:"defaultServiceStatusTypeName"`
 }
 
 type ServicePatchResponse struct {
@@ -63,7 +63,6 @@ type ServicePatchResponse struct {
 			DtoTypeKey string `json:"dtoTypeKey"`
 		} `json:"items"`
 	} `json:"results"`
-
 }
 
 // DELETE https://base_url.com/ResourceServer/api/v6/internal/Service/:id

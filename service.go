@@ -88,8 +88,8 @@ func (c *Client) UpdateService(id int, service ServicePatchStruct) (*ServicePatc
 	if err != nil {
 		return nil, err
 	}
-	
-	patchResponse := ServicePatchResponse{}	
+
+	patchResponse := ServicePatchResponse{}
 	if err := json.Unmarshal(body, &patchResponse); err != nil {
 		return nil, err
 	}
