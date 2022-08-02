@@ -57,7 +57,7 @@ type ServicePatchResponse struct {
 	Type       string `json:"type"`
 	Results    struct {
 		TotalCount int `json:"totalCount"`
-		Items      struct {
+		Items      []struct {
 			Identity   int    `json:"identity"`
 			Action     string `json:"action"`
 			DtoTypeKey string `json:"dtoTypeKey"`
