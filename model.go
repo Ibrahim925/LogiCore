@@ -8,9 +8,9 @@ type ServicePostStruct struct {
 	IsActive                     bool   `json:"isActive"`
 	IsTaxExempt                  bool   `json:"isTaxExempt"`
 	IsInclusiveTaxes             bool   `json:"isInclusiveTaxes"`
-	DefaultServiceStatusTypeName string `json:"defaultServiceStatusTypeId"`
+	DefaultServiceStatusTypeName string `json:"defaultServiceStatusTypeName"`
 	Description                  string `json:"description"`
-	ServiceCategoryName          string `json:"serviceCategoryId"`
+	ServiceCategoryName          string `json:"serviceCategoryName"`
 	ServiceBaseTypeName          string `json:"serviceBaseTypeName"`
 }
 
